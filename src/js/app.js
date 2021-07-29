@@ -3,7 +3,11 @@ import json from './parser';
 
 export default class GameSavingLoader {
   static load() {
-    read()
-      .then((result) => json(result));
+    try {
+      read()
+        .then((result) => json(result));
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
